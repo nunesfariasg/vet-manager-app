@@ -12,20 +12,7 @@ public class ConnectionFactory {
     private static final String URL = "jdbc:postgresql://localhost:5432/vet_manager_db";
     private static final String USER = "postgres";
     private static final String PASS = "123";
-    
-    public static void main(String[] args) {
-        try {
-            Connection connection = ConnectionFactory.getConnection();
-            if (connection != null) {
-                System.out.println("Conexão realizada com SUCESSO!");
-                connection.close();
-            }
-        } catch (Exception e) {
-            System.out.println("Falha na conexão: " + e.getMessage());
-        }
-    }
-
-    
+        
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         try {
             
