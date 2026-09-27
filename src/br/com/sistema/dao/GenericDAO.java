@@ -13,9 +13,9 @@ import java.util.List;
  */
 public interface GenericDAO<T> {
     
-    public void save(T entiti);
+    public void save(T entity);
     
-    public void update(T entiti);
+    public void update(T entity);
     
     public void delete(int id);
     
