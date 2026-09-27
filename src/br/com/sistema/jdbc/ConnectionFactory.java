@@ -21,9 +21,9 @@ public class ConnectionFactory {
             return DriverManager.getConnection(URL, USER, PASS);
             
         } catch (ClassNotFoundException exception) {
-            throw new RuntimeException("Driver não encontrado. Verifique as bibliotecas.", exception);
+            throw new RuntimeException("Driver not found. Check the libraries.", exception);
         } catch (SQLException exception) {
-            throw new RuntimeException("Erro ao conectar ao banco de dados. Verifique a URL, Usuário ou senha.", exception);
+            throw new RuntimeException("Error connecting to the database. Check the URL, Username or password", exception);
         }
     }
     
