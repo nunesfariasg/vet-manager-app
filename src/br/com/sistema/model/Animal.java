@@ -16,7 +16,7 @@ public class Animal {
     private String species;
     private String breed;
     private int age;
-    private Client clientID;
+    private Client client;
 
     public int getId() {
         return id;
@@ -58,12 +58,12 @@ public class Animal {
         this.age = age;
     }
 
-    public Client getCliendID() {
-        return clientID;
+    public Client getClient() {
+        return client;
     }
 
-    public void setCliendID(Client clientID) {
-        this.clientID = clientID;
+    public void setClient(Client client) {
+        this.client = client;
     }
     
     
