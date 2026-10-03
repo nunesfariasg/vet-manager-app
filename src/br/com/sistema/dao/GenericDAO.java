@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author nunes
+ * @param <T>
  */
 public interface GenericDAO<T> {
     
@@ -19,7 +20,7 @@ public interface GenericDAO<T> {
     
     public void delete(int id);
     
-    public List<T> findAll();
+    public List<T> listAll();
     
     public T findById(int id);
     
