@@ -17,7 +17,7 @@ public class AnimalDAO implements GenericDAO<Animal> {
 
     @Override
     public void save(Animal entity) {
-        String sql = "INSERT INTO animals(name, species, breed, age, cliente_id) VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO animals(name, species, breed, age, client_id) VALUES(?, ?, ?, ?, ?)";
         
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -45,7 +45,7 @@ public class AnimalDAO implements GenericDAO<Animal> {
 
     @Override
     public void update(Animal entity) {
-        String sql = "UPDATE animals SET name = ?, species = ?, breed = ?, age = ?, cliente_id = ? WHERE id = ?";
+        String sql = "UPDATE animals SET name = ?, species = ?, breed = ?, age = ?, client_id = ? WHERE id = ?";
     
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -81,7 +81,7 @@ public class AnimalDAO implements GenericDAO<Animal> {
 
     @Override
     public List<Animal> listAll() {
-        String sql = "SELECT id, name, species, breed, age, cliente_id FROM animals";
+        String sql = "SELECT id, name, species, breed, age, client_id FROM animals";
         List<Animal> animals = new ArrayList<>();
         
         try (Connection connection = ConnectionFactory.getConnection();
@@ -103,7 +103,7 @@ public class AnimalDAO implements GenericDAO<Animal> {
 
     @Override
     public Animal findById(int id) {
-        String sql = "SELECT id, name, species, breed, age, cliente_id FROM animals WHERE id = ?";
+        String sql = "SELECT id, name, species, breed, age, client_id FROM animals WHERE id = ?";
         
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -132,7 +132,7 @@ public class AnimalDAO implements GenericDAO<Animal> {
         animal.setBreed(rs.getString("breed"));
         animal.setAge(rs.getInt("age"));
         
-        Client client = clientDAO.findById(rs.getInt("cliente_id"));
+        Client client = clientDAO.findById(rs.getInt("client_id"));
         animal.setClient(client);
         
         return animal;
