@@ -1,0 +1,63 @@
+# Compiled Java files
+
+*.class
+
+# Build output
+
+/build/
+/dist/
+/out/
+/target/
+
+# NetBeans
+
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+**/private/
+
+# IntelliJ IDEA
+
+.idea/
+*.iml
+
+# Eclipse
+
+.project
+.classpath
+.settings/
+
+# Operating system
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+
+*.log
+
+# Temporary files
+
+*.tmp
+*.swp
+*.bak
+*~
+
+# Environment and secrets
+
+.env
+.env.*
+!.env.example
+
+# Local database files
+
+*.db
+*.sqlite
+*.sqlite3
+
+# Java crash logs
+
+hs_err_pid*
+replay_pid*
