@@ -1,40 +1,35 @@
-/**
- * Author:  nunes
- * Created: Sep 26, 2026
- */
-
 CREATE DATABASE vet_manager_db;
 
-create table users (
-id serial primary key,
-username varchar(50) not null,
-password varchar(8) not null
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(8) NOT NULL
 );
 
-create table clients (
-id serial primary key,
-name varchar(50) not null,
-cpf varchar(14) unique,
-phone varchar(20),
-email varchar(100)
+CREATE TABLE clients (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    cpf VARCHAR(14) UNIQUE,
+    phone VARCHAR(20),
+    email VARCHAR(100)
 );
 
-create table animals (
-id serial primary key,
-name varchar(50) not null,
-species varchar(50) not null,
-breed varchar(50) not null,
-age int not null,
-cliente_id int not null,
-foreign key (cliente_id) references clients(id) on delete cascade
+CREATE TABLE animals (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    species VARCHAR(50) NOT NULL,
+    breed VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    client_id INT NOT NULL,
+    FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE
 );
 
-create table appointments (
-id serial primary key,
-animal_id int not null,
-date_appointment date not null, 
-time_appointment time not null,
-reson varchar(50) not null,
-notes varchar(256),
-foreign key (animal_id) references animals(id) on delete cascade 
+CREATE TABLE appointments (
+    id SERIAL PRIMARY KEY,
+    animal_id INT NOT NULL,
+    date_appointment DATE NOT NULL,
+    time_appointment TIME NOT NULL,
+    reson VARCHAR(50) NOT NULL,
+    notes VARCHAR(256),
+    FOREIGN KEY (animal_id) REFERENCES animals(id) ON DELETE CASCADE
 );
