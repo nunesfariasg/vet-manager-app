@@ -7,7 +7,6 @@ package br.com.sistema.model;
 
 import java.time.LocalTime;
 import java.time.LocalDate;
-import javafx.scene.chart.PieChart;
 
 /**
  *
@@ -16,7 +15,7 @@ import javafx.scene.chart.PieChart;
 public class Appointment {
     
     private int id;
-    private Animal animalID;
+    private Animal animal;
     private LocalDate date;
     private LocalTime time;
     private String reason;
@@ -30,12 +29,12 @@ public class Appointment {
         this.id = id;
     }
 
-    public Animal getAnimalID() {
-        return animalID;
+    public Animal getAnimal() {
+        return animal;
     }
 
-    public void setAnimalID(Animal animalID) {
-        this.animalID = animalID;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
     public LocalDate getDate() {
